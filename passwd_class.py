@@ -3,7 +3,7 @@ import string
 
 
 class PasswordGenerator:
-
+    
     def __init__(self) -> None:
         self.length = 8
         self.include_uppercase = True
@@ -32,19 +32,13 @@ class PasswordGenerator:
     def generate_password(self):
         # method wich generate random password
         password = ''
-        # password = password + \
-        #     random.choice(string.ascii_lowercase) + \
-        #     random.choice(string.ascii_uppercase) + \
-        #     random.choice(string.digits) + random.choice(string.punctuation)
         for i in range(self.length):
             password = password + self.ramdom_character()
 
         return f"Yuor password is: {password}"
 
-    def check_password(self, pasword):
-        pass
-
     def change_length(self):
+        # method for chenging length of password
         try:
             self.length = int(input("Enter your length(min 8, max 256): "))
         except ValueError:
@@ -53,6 +47,7 @@ class PasswordGenerator:
         return f"Password length changed to {self.length}"
 
     def check_password_length(self):
+        # metho verifying lentgh of password - must be between 8 and 256 characters
         if self.length < 8 or self.length > 256:
             self.length = 8
             print("Wrong length! Must be between 8 and 256 characters!")
