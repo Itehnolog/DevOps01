@@ -11,7 +11,7 @@ class PasswordGenerator:
         self.include_digits = True
         self.include_special_chars = True
 
-    def ramdom_character(self):
+    def random_character(self):
         # method wich generate random character
         random.seed()
         random_list = []
@@ -33,9 +33,9 @@ class PasswordGenerator:
         # method wich generate random password
         password = ''
         for i in range(self.length):
-            password = password + self.ramdom_character()
+            password = password + self.random_character()
 
-        return f"Yuor password is: {password}"
+        return f"Your password is: {password}"
 
     def change_length(self):
         # method for chenging length of password
