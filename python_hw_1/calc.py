@@ -18,12 +18,8 @@ def division(number1, number2):  # division function
         return "Second number can't be zero!"
 
 
-number_1 = int(input("Please enter the first number: "))
-print()
-
-number_2 = int(input("Please enter the second number: "))
-print()
-
+number_1 = int(input("Please enter the first number: \n"))
+number_2 = int(input("Please enter the second number: \n"))
 print("""
 Please select an operation:
 
