@@ -18,29 +18,35 @@ def division(number1, number2):  # division function
         return "Second number can't be zero!"
 
 
-number_1 = int(input("Please enter the first number: \n"))
-number_2 = int(input("Please enter the second number: \n"))
-print("""
-Please select an operation:
+if __name__ == "__main__":
 
-1. Addition
-2. Subtraction
-3. Multiplication
-4. Division
+    try:
+        number_1 = int(input("Please enter the first number: \n"))
+        number_2 = int(input("Please enter the second number: \n"))
+    except ValueError:
+        print("Wrong input!")
+        exit()
+    print("""
+    Please select an operation:
 
-""")
+    1. Addition
+    2. Subtraction
+    3. Multiplication
+    4. Division
 
-operand = input("Enter your choice (1-4): ")
+    """)
+
+    operand = input("Enter your choice (1-4): ")
 
 
-# dictionary of functuions
-operation = {"1": addition(number_1, number_2),
-             "2": subtraction(number_1, number_2),
-             "3": multiplication(number_1, number_2),
-             "4": division(number_1, number_2)}
+    # dictionary of functuions
+    operation = {"1": addition(number_1, number_2),
+                "2": subtraction(number_1, number_2),
+                "3": multiplication(number_1, number_2),
+                "4": division(number_1, number_2)}
 
-# verification of the correctness of the operation input
-if operand in operation:
-    print(operation[operand])
-else:
-    print("Wrong choice!")
+    # verification of the correctness of the operation input
+    if operand in operation:
+        print(operation[operand])
+    else:
+        print("Wrong choice!")
